@@ -149,5 +149,5 @@ Developed by Shiven kumar ✨
 
 ---
 
-Do you want me to also include **API documentation (all backend routes like `/register`, `/login`, `/pay-razor`, `/verify-razor`, `/credits` etc.)** inside this `README.md`? That would make it production-ready.
+
 ```
