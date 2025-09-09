@@ -5,10 +5,13 @@
 ```markdown
 # 🖼️ Imagify – Text to Image Generator with Credits System
 
-**Imagify** is a full-stack web application that lets users **generate AI-powered images from text prompts**.  
-Users can **register, log in, purchase credits via Razorpay**, and spend credits to generate images.  
+**Imagify** is a full-stack web application that lets users **generate AI-powered images from
+ text prompts**.  
+Users can **register, log in, purchase credits via Razorpay**, and spend credits
+ to generate images.  
 
-Built with **React (Vite)** on the frontend and **Node.js + Express + MongoDB** on the backend.
+Built with **React (Vite)** on the frontend and **Node.js + Express + MongoDB**
+ on the backend.
 
 ---
 
