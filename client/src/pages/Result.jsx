@@ -1,31 +1,32 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { assets } from "../assets/assets";
+import { AppContext } from "../context/AppContext";
 
 const Result = () => {
   const [image, setImage] = useState(assets.sample_img_1);
   const [isImageLoaded, setIsImageLoaded] = useState(false);
   const [loading, setLoading] = useState(false);
-  const[input,setInput]=useState('');
- 
+  const [input, setInput] = useState("");
+  const { generateImage } = useContext(AppContext);
 
-  const onSubmitHandler = async(e)=>
-  {
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    setLoading(true);
 
-  }
+    if (input) {
+      const newImage = await generateImage(input);
+      if (newImage) {
+        setIsImageLoaded(true);
+        setImage(newImage);
+      }
+    }
+    setLoading(false);
+  };
 
   return (
     <form
       className="flex flex-col min-h-[90vh] justify-center items-center"
-      onSubmit={(e) => {
-        e.preventDefault();
-        setLoading(true);
-        // simulate API call
-        setTimeout(() => {
-          setImage(assets.sample_img_1); // replace with generated image
-          setIsImageLoaded(true);
-          setLoading(false);
-        }, 3000);
-      }}
+      onSubmit={onSubmitHandler}
     >
       <div>
         <div className="relative">
@@ -43,7 +44,9 @@ const Result = () => {
       {/* Input + Generate button (show only when not loaded yet) */}
       {!isImageLoaded && !loading && (
         <div className="flex w-full max-w-xl bg-neutral-500 text-white text-sm p-0.5 mt-10 rounded-full">
-          <input onChange={e=>setInput(e.target.value)} value={input}
+          <input
+            onChange={(e) => setInput(e.target.value)}
+            value={input}
             type="text"
             placeholder="Describe what you want to generate"
             className="flex-1 bg-transparent outline-none ml-8 max-sm:w-20 placeholder-gray-400"
@@ -61,7 +64,11 @@ const Result = () => {
       {isImageLoaded && !loading && (
         <div className="mt-6 flex items-center gap-4">
           <p
-            onClick={() => setIsImageLoaded(false)}
+            onClick={() => {
+              setIsImageLoaded(false);
+              setInput("");
+              setImage(null);
+            }}
             className="bg-transparent border border-zinc-900 text-black px-8 py-3 rounded-full cursor-pointer"
           >
             Generate Another
