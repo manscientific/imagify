@@ -97,7 +97,7 @@ RAZORPAY_CURRENCY=INR
 Run backend:
 
 ```bash
-npm run dev
+npm run start
 ```
 
 ### 3️⃣ Setup Frontend
