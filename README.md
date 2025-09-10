@@ -67,7 +67,7 @@ imagify/
 
 ````
 
----
+
 
 ## ⚙️ Setup Instructions
 
