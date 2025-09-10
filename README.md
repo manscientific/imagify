@@ -191,9 +191,4 @@ npm run dev
 
 Developed by Shiven kumar ✨
 
-```
 
----
-
-
-```
