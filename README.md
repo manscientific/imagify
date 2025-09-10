@@ -46,23 +46,21 @@ Built with **React (Vite)** on the frontend and **Node.js + Express + MongoDB**
 ---
 
 ## 📂 Project Structure
-
-```
-
+```bash
 imagify/
 │── backend/
-│   ├── controllers/      # All business logic (auth, payments, image generation)
-│   ├── models/           # Mongoose models (User, Transaction)
-│   ├── routes/           # Express routes
-│   ├── middlewares/      # Authentication middleware
-│   └── server.js         # App entry point
+│   ├── controllers/     # All business logic (auth, payments, image generation)
+│   ├── models/          # Mongoose models (User, Transaction)
+│   ├── routes/          # Express routes
+│   ├── middlewares/     # Authentication middleware
+│   └── server.js        # App entry point
 │
 │── frontend/
 │   ├── src/
-│   │   ├── components/   # React components
-│   │   ├── context/      # Global AppContext
-│   │   ├── pages/        # UI pages (Login, Buy Credits, Generate)
-│   │   └── App.jsx       # Root component
+│   │   ├── components/  # React components
+│   │   ├── context/     # Global AppContext
+│   │   ├── pages/       # UI pages (Login, Buy Credits, Generate)
+│   │   └── App.jsx      # Root component
 │   └── vite.config.js
 │
 └── README.md
