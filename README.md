@@ -80,12 +80,25 @@ cd imagify
 ### 2️⃣ Setup Backend
 
 ```bash
-cd backend
-npm init
+# Initialize package.json
+npm init -y  
+
+# Install required dependencies
+npm install express mongoose dotenv cors razorpay crypto  
+
+# Install dev dependencies
+npm install --save-dev nodemon
+
 ```
+👉 After this, in your package.json, add a dev script so you can run the server with auto-reload:
+```bash
+"scripts": {
+  "start": "node server.js",
+  "dev": "nodemon server.js"
+}
 
 Create a `.env` file:
-
+````
 ```env
 PORT=4000
 MONGO_URI=your_mongodb_connection_string
@@ -98,20 +111,47 @@ RAZORPAY_CURRENCY=INR
 Run backend:
 
 ```bash
-npm run start
+npm run dev
 ```
 
 ### 3️⃣ Setup Frontend
 
 ```bash
 
+# Create Vite + React project
 npm create vite@latest client
+
+# Go into project
 cd client
+
+# Install base deps
 npm install
-npm run dev
+
+# Install required frontend packages
+npm install axios react-router-dom react-toastify
+
+# Install TailwindCSS + PostCSS + Autoprefixer
+npm install -D tailwindcss postcss autoprefixer
+
+# Initialize TailwindCSS config
+npx tailwindcss init -p
 
 
 ```
+In tailwind.config.js, replace content with:
+```bash
+content: [
+  "./index.html",
+  "./src/**/*.{js,ts,jsx,tsx}",
+],
+```
+In src/index.css, add:
+```bash
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
 
 Create a `.env` file:
 
