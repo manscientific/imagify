@@ -5,7 +5,7 @@
 ```markdown
 # 🖼️ Imagify – Text to Image Generator with Credits System
 
-**Imagify** is a full-stack web application that lets users **generate AI-powered images from
+**Imagify** is a mern-stack web application that lets users **generate AI-powered images from
  text prompts**.  
 Users can **register, log in, purchase credits via Razorpay**, and spend credits
  to generate images.  
@@ -83,7 +83,7 @@ cd imagify
 
 ```bash
 cd backend
-npm install
+npm init
 ```
 
 Create a `.env` file:
@@ -106,8 +106,13 @@ npm run start
 ### 3️⃣ Setup Frontend
 
 ```bash
-cd frontend
+
+npm create vite@latest client
+cd client
 npm install
+npm run dev
+
+
 ```
 
 Create a `.env` file:
