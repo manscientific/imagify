@@ -1,55 +1,24 @@
+# 🖼️ Imagify
 
-
----
-
-```markdown
-# 🖼️ Imagify – Text to Image Generator with Credits System
-
-**Imagify** is a mern-stack web application that lets users **generate AI-powered images from
- text prompts**.  
-Users can **register, log in, purchase credits via Razorpay**, and spend credits
- to generate images.  
-
-Built with **React (Vite)** on the frontend and **Node.js + Express + MongoDB**
- on the backend.
+A modern AI-powered image generation platform with authentication, payments, and credit-based usage.
 
 ---
 
-## 🚀 Features
-
-- 🔑 **User Authentication** – Secure login & registration with JWT
-- 💳 **Credits System** – Each user has a credit balance
-- 💰 **Razorpay Payments** – Buy credits with secure Razorpay integration
-- 🖼️ **Text-to-Image Generation** – Convert prompts into images
-- 📊 **Transaction Tracking** – All purchases stored in MongoDB
-- 🎨 **Responsive UI** – Built with Vite + React
-
----
-
-## 🛠 Tech Stack
-
-### Frontend
-- ⚛️ React (Vite)
-- 🎨 TailwindCSS
-- 🔔 React Toastify (notifications)
-- 🔗 Axios (API calls)
-- Razorpay Checkout.js
-
-### Backend
-- 🟢 Node.js
-- 🚂 Express.js
-- 🍃 MongoDB + Mongoose
-- 🔑 JWT Authentication
-- 🧂 Bcrypt (password hashing)
-- 🔐 Crypto (Razorpay signature verification)
+## ✨ Features
+- 🔐 **Authentication**: Secure login/signup with JWT
+- 💳 **Credits & Payments**: Razorpay integration for buying credits
+- 🖼️ **AI Image Generation**: Generate images using advanced AI models
+- 📂 **Credit Management**: Track and manage credits
+- ⚡ **Responsive UI**: Works across devices
+- 🧩 **Reusable Components**: Clean React + Context structure
 
 ---
 
-## 📂 Project Structure
+## 🏗️ Project Structure
 ```bash
 imagify/
 │── backend/
-│   ├── controllers/     # All business logic (auth, payments, image generation)
+│   ├── controllers/     # Business logic (auth, payments, image generation)
 │   ├── models/          # Mongoose models (User, Transaction)
 │   ├── routes/          # Express routes
 │   ├── middlewares/     # Authentication middleware
@@ -65,130 +34,69 @@ imagify/
 │
 └── README.md
 
-````
-
-
-
-## ⚙️ Setup Instructions
-
-### 1️⃣ Clone Repository
-```bash
-git clone https://github.com/your-username/imagify.git
-cd imagify
-````
-
-### 2️⃣ Setup Backend
-
-```bash
-# Initialize package.json
-npm init -y  
-
-# Install required dependencies
-npm install express mongoose dotenv cors razorpay crypto  
-
-# Install dev dependencies
-npm install --save-dev nodemon
-
-```
-👉 After this, in your package.json, add a dev script so you can run the server with auto-reload:
-```bash
-"scripts": {
-  "start": "node server.js",
-  "dev": "nodemon server.js"
-}
-
-Create a `.env` file:
-````
-```env
-PORT=4000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_jwt_secret
-RAZORPAY_KEY_ID=your_razorpay_key_id
-RAZORPAY_KEY_SECRET=your_razorpay_key_secret
-RAZORPAY_CURRENCY=INR
 ```
 
-Run backend:
+# 🛠️ Tech Stack
+
+Frontend
+
+⚛️ React (Vite + Context API)
+
+🎨 TailwindCSS
+
+🔄 Axios for API calls
+
+💳 Razorpay SDK
+
+Backend
+
+🟢 Node.js + Express
+
+🍃 MongoDB + Mongoose
+
+🔐 JWT Authentication
+
+💳 Razorpay for payments
+
+# 📦 Installation
+Backend
 
 ```bash
-npm run dev
+cd backend
+npm init -y
+npm install express mongoose cors dotenv bcrypt jsonwebtoken razorpay body-parser
+node server.js
 ```
 
-### 3️⃣ Setup Frontend
-
+frontend
 ```bash
-
-# Create Vite + React project
-npm create vite@latest client
-
-# Go into project
-cd client
-
-# Install base deps
+npm create vite@latest frontend
+cd frontend
 npm install
-
-# Install required frontend packages
-npm install axios react-router-dom react-toastify
-
-# Install TailwindCSS + PostCSS + Autoprefixer
-npm install -D tailwindcss postcss autoprefixer
-
-# Initialize TailwindCSS config
-npx tailwindcss init -p
-
-
-```
-In tailwind.config.js, replace content with:
-```bash
-content: [
-  "./index.html",
-  "./src/**/*.{js,ts,jsx,tsx}",
-],
-```
-In src/index.css, add:
-```bash
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-```
-
-
-Create a `.env` file:
-
-```env
-VITE_BACKEND_URL=http://localhost:4000
-VITE_RAZORPAY_KEY_ID=your_razorpay_key_id
-```
-
-Run frontend:
-
-```bash
+npm install axios razorpay tailwindcss
 npm run dev
 ```
 
----
+# ⚡ Prerequisites
 
-## 💳 Payment Flow
+Node.js (v14 or higher)
 
-1. User clicks **Purchase Credits**
-2. Backend creates Razorpay **order**
-3. Razorpay Checkout opens → user pays
-4. Razorpay sends `order_id`, `payment_id`, and `signature`
-5. Backend verifies signature using `crypto`
-6. On success → credits added to user’s account
+MongoDB (local or Atlas)
 
----
+Razorpay API keys
 
-## 🎯 Future Improvements
+clipdrop / Image API key
 
-* 📜 Add user’s **transaction history page**
-* 🖼️ Gallery of generated images
-* 🌍 Deploy backend (Render/Heroku) and frontend (Vercel/Netlify)
+ #🚀 Getting Started
 
----
-
-## 👨‍💻 Author
-
-Developed by Shiven kumar ✨
+Clone the repo
+```bash
+git clone https://github.com/manscientific/imagify.git
+```
 
 
+Setup backend (.env file with MongoDB + Razorpay + API keys)
+
+Run backend and frontend simultaneously
+
+Start generating AI-powered images 🎨
