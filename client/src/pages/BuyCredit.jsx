@@ -108,7 +108,7 @@ const BuyCredit = () => {
             <p className="mt-3 mb-1 font-semibold">{item.id}</p>
             <p className="text-sm">{item.desc}</p>
             <div className="mt-6 flex flex-col items-center">
-              <span className="text-3xl font-medium">${item.price}</span>
+              <span className="text-3xl font-medium">₹{item.price}</span>
               <span className="text-gray-500 text-sm">
                 {item.credits} credits
               </span>
