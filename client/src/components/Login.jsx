@@ -115,7 +115,7 @@ const Login = () => {
 
         {state === "Login" && (
           <p className="text-sm text-blue-600 my-4 cursor-pointer">
-            Forgot password?
+            
           </p>
         )}
 
